@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 235, 216);
+}
+
+#adicionarRecado {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.504);
+    backdrop-filter: blur(40px);
+    border-radius: 20px 20px 20px 20px;
+    height: 30%;
+    width: 70%;
+    text-align: center;
+    padding-top: 6%;
+    left: 280px;
+    bottom: 65%;
+}
+
+#titulo {
+    position: absolute;
+    left: 70px;
+    top: 40px;
+    font-size: 30px;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    background-color: rgb(54, 64, 196);
+    width: 5rem;
+    height: 0.3rem;
+    position: absolute;
+    border-radius: 10px;
+}
+
+#descricao {
+    position: absolute;
+    left: 70px;
+    width: 500px;
+    height: 30px;
+}
+
+#detalhamento {
+    position: absolute;
+    left: 38rem;
+    width: 500px;
+    height: 30px;
+}
+
+#botaoCriar {
+    position: absolute;
+    right: 7rem;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: 0;
+}
+
+#botaoCriar:hover {
+    background: rgba(249, 90, 119, 0.405);
+    border: 0;
+    border-radius: 10px;
+    
+}
+
+#recados {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.504);
+    backdrop-filter: blur(40px);
+    border-radius: 20px 20px 20px 20px;
+    height: 30%;
+    width: 70%;
+    text-align: center;
+    padding-top: 6%;
+    left: 280px;
+    bottom: 30%;
+}

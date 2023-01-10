@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 235, 216);
+}
+
+img {
+    display: absolute;
+    width: 38%;
+    position: absolute;
+    top: 110px;
+    left: 210px;
+}
+
+#formulario {
+    position: absolute;
+    left: 55%;
+    top: 30%;
+    background-color: rgba(255, 255, 255, 0.549);
+    backdrop-filter: blur(40px);
+    border-radius: 20px 20px 20px 20px;
+    height: 50%;
+    width: 25%;
+    text-align: center;
+    padding-top: 6%;
+}
+
+#titulo {
+    position: absolute;
+    top: calc(100% - 95%);
+    left: calc(100% - 95%);
+}
+
+h1::after {
+    content: '';
+    display: block;
+    background-color: rgb(54, 64, 196);
+    width: 5rem;
+    height: 0.3rem;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+#email-usuario {
+    position: absolute;
+    left: calc(100% - 90%);
+    width: calc(100% - 18%);
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    border-color: rgba(240, 255, 255, 0);
+}
+
+#senha-usuario {
+    position: absolute;
+    left: calc(100% - 90%);
+    width: calc(100% - 18%);
+    height: 30px;
+    text-align: center;
+    top: 150px;
+    border-radius: 5px;
+    border-color: rgba(240, 255, 255, 0);
+}
+
+#salvarDados {
+    position: absolute;
+    left: calc(100% - 88%);
+    top: 185px;
+}
+
+#salvarDadosBotao {
+    position: absolute;
+    left: calc(100% - 88%);
+    top: calc(100% - 59%);
+    right: calc(100% - 62%);
+}
+
+#botaoEntrar {
+    position: absolute;
+    top: calc(100% - 45%);
+    width: calc(100% - 70%);
+    left: calc(100% - 65%);
+    border-radius: 5px;
+    border-color: rgba(249, 90, 119, 0);
+}
+
+#botaoEntrar:hover {
+    background: rgb(249, 90, 119);
+    border-radius: 20px;
+}
+
+#criarConta {
+    position: absolute;
+    bottom: calc(100% - 90%);
+    right: calc(100% - 78%);
+}
