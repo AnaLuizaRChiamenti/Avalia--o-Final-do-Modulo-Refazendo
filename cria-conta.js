@@ -54,6 +54,7 @@ formularioHTML.addEventListener('submit', (evento) => {
 
     console.log(listaCadastros);
 
+    window.location.href = './Entrar-no-sistema.html'
 })
 
 function guardarNoLocalStorage(chave, valor) {
