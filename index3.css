@@ -12,6 +12,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: rgb(255, 235, 216);
+    background-image: url(Design\ com\ cor.png);
 }
 
 #adicionarRecado {
@@ -37,7 +38,7 @@ body {
 h1::after {
     content: '';
     display: block;
-    background-color: rgb(54, 64, 196);
+    background-color: rgb(240, 211, 174);
     width: 5rem;
     height: 0.3rem;
     position: absolute;
@@ -71,18 +72,49 @@ h1::after {
     background: rgba(249, 90, 119, 0.405);
     border: 0;
     border-radius: 10px;
-    
+
 }
 
-#recados {
+#titulosRecados {
     position: absolute;
     background-color: rgba(255, 255, 255, 0.504);
     backdrop-filter: blur(40px);
     border-radius: 20px 20px 20px 20px;
-    height: 30%;
+    height: 55%;
     width: 70%;
     text-align: center;
-    padding-top: 6%;
+    padding-top: 2%;
     left: 280px;
-    bottom: 30%;
+    bottom: 5%;
+}
+
+th,
+td {
+    text-align: center;
+    border-bottom: 1px solid #DDD;
+    width: 334px;
+}
+
+#deslogar {
+    position: absolute;
+    left: 94rem;
+    top: 66px;
+    border-radius: 1px;
+    border-color: rgba(249, 90, 119, 0);
+}
+
+#deslogar::after {
+    content: '';
+    display: block;
+    background-color: rgb(240, 211, 174);
+    width: 5.6rem;
+    height: 0.3rem;
+    position: absolute;
+    border-radius: 10px;
+}
+
+
+#deslogar:hover {
+    background: rgba(249, 90, 119, 0.344);
+    border-radius: 20px;
 }

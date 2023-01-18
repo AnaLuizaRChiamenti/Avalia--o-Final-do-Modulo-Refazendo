@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,22 +8,34 @@
     <title>Meus recados</title>
     <link rel="stylesheet" href="index3.css">
 </head>
+
 <body>
     <main>
-        <section id="adicionarRecado">
-            <h1 id="titulo">Meus Recados</h1>
-            <input type="text" id="descricao" placeholder="Descrição">
-            <input type="text" id="detalhamento" placeholder="Detalhamento">
-            <input value="Salvar" type="submit" id="botaoCriar"> <br>
-        </section>
+        <form id="formulario-recado">
+            <section id="adicionarRecado">
+                <h1 id="titulo">Meus Recados</h1>
+                <input type="text" id="descricao" placeholder="Descrição" name="descricao">
+                <input type="text" id="detalhamento" placeholder="Detalhamento" name="detalhamento">
+                <input value="Salvar" type="submit" id="botaoCriar"> <br>
+            </section>
+        </form>
+        <button onclick="deslogar()" id="deslogar">Sair da Conta</button>
+        <section id="titulosRecados">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Descrição</th>
+                        <th>Detalhamento</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="registros">
 
-        <section id="recados">
-            <p>#</p>
-            <p>Descrição</p>
-            <p>Detalhamento</p>
-            <p>Ação</p>
+                </tbody>
         </section>
     </main>
-    <script src="index.js"></script>
+    <script src="salvarRecados.js"></script>
 </body>
+
 </html>

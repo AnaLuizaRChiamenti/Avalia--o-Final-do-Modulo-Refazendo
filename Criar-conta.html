@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar uma conta para Sistema de Recados</title>
+    <title>Criar uma conta</title>
     <link rel="stylesheet" href="index2.css">
 </head>
 
@@ -18,14 +18,20 @@
     <main>
         <section id="formulario">
             <h1 id="titulo">Cadastre-se</h1>
-            <input value="" type="email" placeholder="Email" id="email-usuario" required> <br>
-            <input value="" type="password" placeholder="Senha" id="senha-usuario" required> <br>
-            <input value="" type="password" placeholder="Repetir senha" id="repetir-senha-usuario" required> <br>
-            <input value="Criar" type="submit" id="botaoCriar"> <br>
+            <form id="form-criar-conta">
+                <input type="email" placeholder="Email" id="email-usuario" name="email-usuario" required> <br>
+                <input type="password" placeholder="Senha" id="senha-usuario" name="senha-usuario" required> <br>
+                <input type="password" placeholder="Repetir senha" id="repetir-senha-usuario"
+                    name="repetir-senha-usuario" required> <br>
+                <input value="Criar" type="submit" id="botaoCriar">
+            </form>
+            <span id="feedback"></span>
+            <br>
         </section>
         <a href="./Entrar-no-sistema.html" id="voltar-pagina">Voltar a página principal</a>
     </main>
-    <script src="index.js"></script>
+    <script src="cria-conta.js"></script>
 </body>
 
 </html>
+
