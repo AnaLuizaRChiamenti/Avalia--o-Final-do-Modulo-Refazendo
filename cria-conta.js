@@ -54,6 +54,7 @@ formularioHTML.addEventListener('submit', (evento) => {
 
     console.log(listaCadastros);
 
+    alert("Conta criada!")
     window.location.href = './Entrar-no-sistema.html'
 })
 
