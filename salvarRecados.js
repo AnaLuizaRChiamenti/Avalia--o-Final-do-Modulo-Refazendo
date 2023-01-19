@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'Entrar-no-sistema.html'
     } else {
         console.log(usuarioLogado);
-        mostarRecadosNoHTML();
+        mostrarNoTabelaHTML();
     }
 })
 
@@ -35,12 +35,12 @@ formulario.addEventListener('submit', (evento) => {
 
     formulario.reset()
 
-    mostarRecadosNoHTML()
+    mostrarNoTabelaHTML()
 
     guardarNoLocalStorage('usuarioLogado', usuarioLogado)
 })
 
-function mostarRecadosNoHTML() {
+function mostrarNoTabelaHTML() {
     tbody.innerHTML = ''
 
     listaRecados.forEach((valor, index) => {
@@ -92,6 +92,9 @@ function buscarDadosDoLocalStorage(chave) {
 }
 
 function deslogar() {
+
+    salvarRecados()
+
     localStorage.removeItem('usuarioLogado')
     window.location.href = './Entrar-no-sistema.html'
 }
@@ -104,7 +107,7 @@ function botaoEditar(indice) {
     inputEditarDescricao.value = usuarioLogado.recados[indice].descricao
     inputEditarDetalhamento.value = usuarioLogado.recados[indice].detalhamento
 
-    
+
     const formularioEditar = document.getElementById('formulario-editar-recados')
     formularioEditar.addEventListener('submit', (evento) => {
         evento.preventDefault()
@@ -118,10 +121,9 @@ function botaoEditar(indice) {
         guardarNoLocalStorage('usuarioLogado', usuarioLogado)
 
         // atualizar o html
-        montarRegistrosNoHTML()
+        mostrarNoTabelaHTML()
 
         meuModalEditar.hide()
-        
     })
 }
 
@@ -134,7 +136,5 @@ function botaoExcluir(indice) {
 
     guardarNoLocalStorage('usuarioLogado', usuarioLogado)
 
-    salvarRecados()
-
-    mostarRecadosNoHTML()
+    mostrarNoTabelaHTML()
 }
