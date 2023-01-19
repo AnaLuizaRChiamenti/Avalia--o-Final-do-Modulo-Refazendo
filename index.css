@@ -104,4 +104,5 @@ h1::after {
     position: absolute;
     bottom: calc(100% - 90%);
     right: calc(100% - 78%);
+    text-decoration: none;
 }

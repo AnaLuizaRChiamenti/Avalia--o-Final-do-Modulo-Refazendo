@@ -1,4 +1,6 @@
 
+const meuModalEditar = new bootstrap.Modal('#modal-editar')
+
 const usuarioLogado = buscarDadosDoLocalStorage('usuarioLogado')
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -48,8 +50,12 @@ function mostarRecadosNoHTML() {
             <td>${valor.detalhamento}</td>
             <td>${valor.descricao}</td>
             <td>
-                <button onclick="botaoEditar()">Editar</button>    
-                <button onclick="botaoExcluir(${index})">Excluir</button> 
+            <button id="editar" type="button" onclick="botaoEditar(${index})" data-bs-toggle="modal" data-bs-target="#modal-editar" >
+                <i class="bi bi-pen"></i>
+                Editar
+            </button>                 
+            
+            <button onclick="botaoExcluir(${index})" id="botaoExcluir">Excluir</button> 
             </td>
         </tr>
         `
@@ -83,15 +89,40 @@ function buscarDadosDoLocalStorage(chave) {
     } else {
         return {}
     }
-} 
+}
 
 function deslogar() {
     localStorage.removeItem('usuarioLogado')
     window.location.href = './Entrar-no-sistema.html'
 }
 
-function botaoEditar() {
+function botaoEditar(indice) {
 
+    const inputEditarDescricao = document.getElementById("editar-descricao");
+    const inputEditarDetalhamento = document.getElementById("editar-detalhamento");
+
+    inputEditarDescricao.value = usuarioLogado.recados[indice].descricao
+    inputEditarDetalhamento.value = usuarioLogado.recados[indice].detalhamento
+
+    
+    const formularioEditar = document.getElementById('formulario-editar-recados')
+    formularioEditar.addEventListener('submit', (evento) => {
+        evento.preventDefault()
+
+        // ATUALIZAR A LISTA DE RECADOS
+        usuarioLogado.recados[indice].descricao = inputEditarDescricao.value
+        usuarioLogado.recados[indice].detalhamento = inputEditarDetalhamento.value
+        console.log(usuarioLogado.recados[indice])
+
+        // atualizar o localStorage
+        guardarNoLocalStorage('usuarioLogado', usuarioLogado)
+
+        // atualizar o html
+        montarRegistrosNoHTML()
+
+        meuModalEditar.hide()
+        
+    })
 }
 
 function botaoExcluir(indice) {
@@ -100,7 +131,7 @@ function botaoExcluir(indice) {
 
     const removerRecados = document.getElementById(indice)
     removerRecados.remove()
-    
+
     guardarNoLocalStorage('usuarioLogado', usuarioLogado)
 
     salvarRecados()

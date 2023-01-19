@@ -44,19 +44,27 @@ formularioHTML.addEventListener('submit', (evento) => {
         email,
         senha,
         repetirSenha,
-        recados: [] 
+        recados: []
     }
 
     listaCadastros.push(novoCadastro)
-    
+
     guardarNoLocalStorage('Lista-Usuarios', listaCadastros)
     formularioHTML.reset()
 
     console.log(listaCadastros);
 
-    alert("Conta criada!")
-    window.location.href = './Entrar-no-sistema.html'
+    if (novoCadastro) {
+        feedbackHTML.innerText = ("Conta criada!")
+
+        setTimeout(() => {
+            feedbackHTML.innerText = ''
+            window.location.href = './Entrar-no-sistema.html'
+        }, 2000)
+        return;
+    }
 })
+
 
 function guardarNoLocalStorage(chave, valor) {
     const valorJSON = JSON.stringify(valor)
