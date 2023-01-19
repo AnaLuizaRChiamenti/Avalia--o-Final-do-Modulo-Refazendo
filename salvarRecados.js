@@ -106,5 +106,4 @@ function botaoExcluir(indice) {
     salvarRecados()
 
     mostarRecadosNoHTML()
-} // apaga apenas 4 recados
-
+}
