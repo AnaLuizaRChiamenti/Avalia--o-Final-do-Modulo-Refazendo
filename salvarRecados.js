@@ -3,7 +3,7 @@ const usuarioLogado = buscarDadosDoLocalStorage('usuarioLogado')
 
 document.addEventListener('DOMContentLoaded', () => {
     if (!usuarioLogado.email) {
-        alert("Não existe")
+        alert("É preciso realizar o login para entrar nesta pagina!")
         window.location.href = 'Entrar-no-sistema.html'
     } else {
         console.log(usuarioLogado);
