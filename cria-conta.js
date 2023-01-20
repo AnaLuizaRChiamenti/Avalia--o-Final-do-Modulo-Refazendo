@@ -29,6 +29,7 @@ formularioHTML.addEventListener('submit', (evento) => {
 
         return;
     }
+    
 
     if (senha !== repetirSenha) {
         feedbackHTML.innerText = ("As senhas não conferem. Tente novamente!")

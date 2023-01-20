@@ -3,6 +3,8 @@ const meuModalEditar = new bootstrap.Modal('#modal-editar')
 
 const usuarioLogado = buscarDadosDoLocalStorage('usuarioLogado')
 
+const listaRecadosLimite = document.getElementById('limiteAtingidoRecados')
+
 document.addEventListener('DOMContentLoaded', () => {
     if (!usuarioLogado.email) {
         alert("É preciso realizar o login para entrar nesta pagina!")
@@ -30,14 +32,23 @@ formulario.addEventListener('submit', (evento) => {
         detalhamento: detalhamento,
     }
 
-    listaRecados.push(novoRecado)
-    salvarRecados()
+    if (listaRecados.length > 12) {
+        listaRecadosLimite.innerText = ("Limite de recados atingido, apague um recado para continuar!")
 
-    formulario.reset()
+        setTimeout(() => {
+            listaRecadosLimite.innerText = ''
+        }, 3000)
+    } else {
+        listaRecados.push(novoRecado)
+        salvarRecados()
 
-    mostrarNoTabelaHTML()
+        formulario.reset()
 
-    guardarNoLocalStorage('usuarioLogado', usuarioLogado)
+        mostrarNoTabelaHTML()
+
+        guardarNoLocalStorage('usuarioLogado', usuarioLogado)
+    }
+
 })
 
 function mostrarNoTabelaHTML() {

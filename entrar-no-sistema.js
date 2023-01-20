@@ -2,6 +2,8 @@ const formularioHTML = document.getElementById('form-cadastro')
 
 const listaLogin = buscarDadosDoLocalStorage('Lista-Usuarios')
 
+const senhaEmailInvalidos = document.getElementById('senhaEmailInvalidos')
+
 formularioHTML.addEventListener('submit', (evento) => {
     evento.preventDefault();
 
@@ -11,8 +13,11 @@ formularioHTML.addEventListener('submit', (evento) => {
     const existe = listaLogin.find((valor) => valor.email === email && valor.senha === senha)
 
     if (!existe) {
-        alert("Senha ou email invalidos, ou não existem!")
-        return;
+        senhaEmailInvalidos.innerText = ("Senha ou email invalidos, ou não existem!")
+
+        setTimeout(() => {
+            listaRecadosLimite.innerText = ''
+        }, 3000)
     } else {
         window.location.href = "Listas-recados.html"
     }

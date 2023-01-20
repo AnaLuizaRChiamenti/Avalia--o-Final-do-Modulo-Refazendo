@@ -110,4 +110,6 @@ h1::after {
     position: absolute;
     bottom: calc(100% - 75%);
     right: calc(100% - 73%);
+    text-decoration: none;
+
 }
