@@ -25,7 +25,7 @@ formularioHTML.addEventListener('submit', (evento) => {
 
         setTimeout(() => {
             feedbackHTML.innerText = ''
-        }, 3000)
+        }, 1000)
 
         return;
     }

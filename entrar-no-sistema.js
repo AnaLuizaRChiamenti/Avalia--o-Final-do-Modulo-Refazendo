@@ -16,7 +16,7 @@ formularioHTML.addEventListener('submit', (evento) => {
         senhaEmailInvalidos.innerText = ("Senha ou email invalidos, ou não existem!")
 
         setTimeout(() => {
-            listaRecadosLimite.innerText = ''
+            senhaEmailInvalidos.innerText = ''
         }, 3000)
     } else {
         window.location.href = "Listas-recados.html"
